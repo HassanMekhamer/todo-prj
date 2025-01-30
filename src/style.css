@@ -1,0 +1,23 @@
+#list {
+    border-radius: 8px;
+    border: 1.5px solid rebeccapurple;
+    padding: 10px;
+    margin: 100px;
+}
+
+#list > div {
+    border-radius: 8px;
+    border: 1px red solid;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+body {
+    background-color: antiquewhite;
+}

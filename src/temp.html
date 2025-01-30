@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Todoist</h1>
+    <div id="list">
+        <div class="default">
+            <h4 class="title">How to use</h4>
+            <p class="description">This is the first item in the todo list</p>
+        </div>
+    </div>
 
-    <form action="get">
+    <form action="get" class="form">
         <input type="text" name="title" id="title">
         <label for="title">title</label>
 
@@ -25,5 +33,8 @@
         <label for="notes">notes</label>
     </form>
 
+    <button class="addToList">add to list</button>
+
 </body>
+
 </html>
