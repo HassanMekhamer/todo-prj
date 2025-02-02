@@ -1,42 +1,33 @@
 import "./style.css";
-import { addToListBtn, createItem } from "./input";
+import { } from "./input";
+import { activeList, archive } from './data.js'
 
 
-//DOM selectors
-const htmlList = document.querySelector("#list");
-
-
-let list = [
-
-]
-let archive = [
-
-]
-
-class Item {
+export class Item {
     constructor(title, description, dueDate, priority, notes) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
-        this.notes = notes;   
+        this.notes = notes;
     }
 
     addToList() {
-        list.push(this)
+        activeList.push(this);
     }
 
     delFromList() {
-        list.pop()
+        if (!activeList.includes(this)) return;
+        const index = activeList.indexOf(this);
+        if (index > -1) {
+            activeList.splice(index, 1);
+        }
+        // activeList.pop()
     }
 
     checkDone() {
-        list.pop()
+        this.delFromList();
         archive.push(this)
     }
-}
+};
 
-addToListBtn.addEventListener("click", createItem)
-
-
-export { Item, htmlList, list}

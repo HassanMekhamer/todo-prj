@@ -1,14 +1,10 @@
-import { Item, htmlList, list } from './index.js'
+// import { Item, } from './index.js'
+import { } from "./done.js"
+import { newTitle, newDescription, newDueDate, newPriority, newNotes, activeList, archive, addToListBtn, Item, homeBtn, homeList } from './data.js'
 
 //list selectors
-let newTitle = document.querySelector("#title");
-let newDescription = document.querySelector("#description");
-let newDueDate = document.querySelector("#dueDate");
-let newPriority = document.querySelector("#priority");
-let newNotes = document.querySelector("#notes")
 
 //add to list button selector
-let addToListBtn = document.querySelector(".addToList");
 
 addToListBtn.addEventListener("click", createItem)
 
@@ -16,33 +12,48 @@ addToListBtn.addEventListener("click", createItem)
 function createItem() {
     let newItem = new Item(newTitle.value, newDescription.value, newDueDate.value, newPriority.value, newNotes.value)
 
-    newItem.addToList()
+    if (newItem.title !== "") {
+        newItem.addToList()
 
-    let itemElement = document.createElement("div");
-    let head = document.createElement("h4");
-    let para = document.createElement("p");
+        //creating elements for each item/task
+        let itemElement = document.createElement("div");
+        let head = document.createElement("h4");
+        let para = document.createElement("p");
+        let checkBtn = document.createElement("button");
+        let delBtn = document.createElement("button")
 
-    head.textContent = newItem.title;
-    para.textContent = newItem.description;
+        //text contect
+        head.textContent = newItem.title;
+        para.textContent = newItem.description;
+        checkBtn.textContent = "Check/Done";
+        delBtn.textContent = "X";
 
-    itemElement.appendChild(head)
-    itemElement.appendChild(para)
-    htmlList.appendChild(itemElement)
+        //appending the elemnts to the parent item(task)
+        itemElement.appendChild(head)
+        itemElement.appendChild(para)
+        itemElement.appendChild(checkBtn)
+        itemElement.appendChild(delBtn);
 
-    let delBtn = document.createElement("button")
-    delBtn.classList.add(".delBtn")
-    delBtn.textContent = "delete"
-    itemElement.appendChild(delBtn);
+        //adding classes for styling
+        delBtn.classList.add("delBtn")
+        checkBtn.classList.add("checkBtn")
 
+        console.log(activeList)
+        console.log(homeList)
 
-    delBtn.addEventListener("click", () => {
-        htmlList.removeChild(itemElement)
-        newItem.delFromList()
-        console.log(list)
+        checkBtn.addEventListener("click", () => {
+            activeList.removeChild(itemElement)
+            archive.push(this)
+            newItem.checkDone()
+        })
 
-    })
-
-    console.log(list)
+        delBtn.addEventListener("click", () => {
+            htmlList.removeChild(itemElement)
+            newItem.delFromList()
+        })
+    } else {
+        alert("add at least a title to the task")
+    }
 }
 
 

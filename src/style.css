@@ -7,9 +7,9 @@
 
 #list > div {
     border-radius: 8px;
-    border: 1px red solid;
-    padding: 4px;
+    padding: 20px;
     margin-bottom: 20px;
+    background-color: blueviolet;
 }
 
 .form {
