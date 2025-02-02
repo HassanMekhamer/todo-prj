@@ -17,7 +17,6 @@ export class Item {
         if (index > -1) {
             activeList.splice(index, 1);
         }
-        // activeList.pop()
     }
 
     checkDone() {
@@ -27,9 +26,7 @@ export class Item {
 };
 
 export let activeList = [
-    new Item("how to",
-        "you just use the inputs below and make sure to submit using the button",
-        "no date"),
+   
 ];
 
 export let archive = [
@@ -39,17 +36,23 @@ export let archive = [
 
 
 
-//DOM selectors
+//DOM items
 //item input elements
 export let newTitle = document.querySelector("#title");
 export let newDescription = document.querySelector("#description");
 export let newDueDate = document.querySelector("#dueDate");
 export let newPriority = document.querySelector("#priority");
 export let newNotes = document.querySelector("#notes")
+
 //tabs
 export let archiveBtn = document.querySelector(".archiveBtn");
 export let homeBtn = document.querySelector(".homeBtn");
+
 //buttons
-export let homeList = document.querySelector(".home")
+export let viewed = document.querySelector(".viewed")
 export let addToListBtn = document.querySelector(".addToListBtn");
 
+//creating home-list element (home-tab) active items
+export let homeList = document.createElement("div")
+//creating archived-list element (archived tab) archived items
+export let archivedlist = document.createElement("div")

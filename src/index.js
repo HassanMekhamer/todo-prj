@@ -1,33 +1,7 @@
 import "./style.css";
-import { } from "./input";
-import { activeList, archive } from './data.js'
+import { createItem } from "./input";
+import { newTitle, newDescription, newDueDate, newPriority, newNotes, activeList, archive, addToListBtn, Item, homeBtn, homeList, } from './data.js'
+import {viewHome } from './home.js'
 
-
-export class Item {
-    constructor(title, description, dueDate, priority, notes) {
-        this.title = title;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.priority = priority;
-        this.notes = notes;
-    }
-
-    addToList() {
-        activeList.push(this);
-    }
-
-    delFromList() {
-        if (!activeList.includes(this)) return;
-        const index = activeList.indexOf(this);
-        if (index > -1) {
-            activeList.splice(index, 1);
-        }
-        // activeList.pop()
-    }
-
-    checkDone() {
-        this.delFromList();
-        archive.push(this)
-    }
-};
-
+viewHome(activeList)
+addToListBtn.addEventListener("click", createItem)
