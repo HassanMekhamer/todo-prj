@@ -1,7 +1,11 @@
 import "./style.css";
-import { createItem } from "./input";
-import { newTitle, newDescription, newDueDate, newPriority, newNotes, activeList, archive, addToListBtn, Item, homeBtn, homeList, } from './data.js'
-import {viewHome } from './home.js'
+import { } from "./input";
+import { activeList, archive, archiveBtn, } from './data.js'
+import { viewHome } from './home.js'
+import { viewArchive } from "./done.js";
 
 viewHome(activeList)
 
+archiveBtn.addEventListener("click", () => {
+    viewArchive(archive)
+})
