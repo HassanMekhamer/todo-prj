@@ -3,7 +3,6 @@ import { viewed, homeList, activeList, homeBtn } from './data'
 //function to work on the activeList array and view it in HTML
 export function viewHome(list) {
     viewed.innerHTML = ""
-    console.log("works")
     homeList.innerHTML = ""
 
     for (let i = 0; i < list.length; i++) {
@@ -11,31 +10,15 @@ export function viewHome(list) {
 
         let itemElement = document.createElement("div");
         let head = document.createElement("h4");
-        let showBtn = document.createElement("button")
-        showBtn.textContent = "show"
-
-        showBtn.addEventListener("click", () => {
-            item.show ? true : false;
-        })
-
-        function toggleItem(item) {
-            if (item.show) {
-                let para = document.createElement("p");
-                para.textContent = item.description
-                itemElement.appendChild(para)
-
-            }
-        }
-        toggleItem(item)
-
 
         //check and delete buttons
         let checkBtn = document.createElement("button");
-        let delBtn = document.createElement("button")
+        let delBtn = document.createElement("button");
+        let showBtn = document.createElement("button");
 
         //text contect
         head.textContent = item.title;
-
+        showBtn.textContent = "show"
         checkBtn.textContent = "Check/Done";
         delBtn.textContent = "X";
 
@@ -54,6 +37,21 @@ export function viewHome(list) {
         delBtn.addEventListener("click", () => {
             homeList.removeChild(itemElement)
             item.delFromList()
+        })
+
+        showBtn.addEventListener("click", () => {
+            item.show = !item.show;
+
+            if (item.show) {
+                console.log("toggle works");
+                let para = document.createElement("p");
+                para.classList.add("desc")
+                para.textContent = item.description
+                itemElement.appendChild(para)
+            } else {
+                let para = document.querySelector(".desc")
+                itemElement.removeChild(para)
+            }
         })
 
         homeList.appendChild(itemElement)
