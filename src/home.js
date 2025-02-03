@@ -2,6 +2,8 @@ import { viewed, homeList, activeList, homeBtn } from './data'
 
 //function to work on the activeList array and view it in HTML
 export function viewHome(list) {
+    console.log("works")
+
     for (let i = 0; i < list.length; i++) {
         const item = list[i];
 
@@ -38,10 +40,11 @@ export function viewHome(list) {
         homeList.appendChild(itemElement)
     }
     viewed.appendChild(homeList)
-}
+
+};
+
 
 homeBtn.addEventListener("click", () => {
-    if (viewed.innerHTML = "") {
-        viewHome(activeList)
-    }
-})
+    viewHome(activeList)
+});
+

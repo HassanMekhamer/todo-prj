@@ -33,9 +33,6 @@ export let archive = [
 
 ];
 
-
-
-
 //DOM items
 //item input elements
 export let newTitle = document.querySelector("#title");

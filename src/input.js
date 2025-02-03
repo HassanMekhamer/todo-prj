@@ -11,60 +11,24 @@ export function createItem() {
     let newItem = new Item(newTitle.value, newDescription.value, newDueDate.value, newPriority.value, newNotes.value)
 
     if (newItem.title !== "") {
-
-        // //creating elements for item
-        // let itemElement = document.createElement("div");
-        // let head = document.createElement("h4");
-        // let para = document.createElement("p");
-        // //check and delete buttons
-        // let checkBtn = document.createElement("button");
-        // let delBtn = document.createElement("button")
-
-        // //text contect
-        // head.textContent = newItem.title;
-        // para.textContent = newItem.description;
-        // checkBtn.textContent = "Check/Done";
-        // delBtn.textContent = "X";
-
-        // //appending the children to the parent item(task)
-        // itemElement.appendChild(head)
-        // itemElement.appendChild(para)
-        // itemElement.appendChild(checkBtn)
-        // itemElement.appendChild(delBtn);
-
-        // //adding classes for styling
-        // delBtn.classList.add("delBtn")
-        // checkBtn.classList.add("checkBtn")
-
         //add it to the active list
         newItem.addToList()
 
-        // //appending the item to the viewed homeList
-        // homeList.appendChild(itemElement)
-
-        // checkBtn.addEventListener("click", () => {
-        //     homeList.removeChild(itemElement)
-        //     newItem.checkDone()
-        // })
-
-        // delBtn.addEventListener("click", () => {
-        //     homeList.removeChild(itemElement)
-        //     newItem.delFromList()
-        // })
+        viewHome(activeList)
 
         newTitle.value = ""
         newDescription.value = ""
         newDueDate.value = ""
         newPriority.value = ""
-        newNotes.value = ""     
-        
-        viewHome(activeList)
+        newNotes.value = ""           
     } else {
         alert("add at least a title to the task")
     }
 }
 
 
+
+addToListBtn.addEventListener("click", createItem)
 
 
 

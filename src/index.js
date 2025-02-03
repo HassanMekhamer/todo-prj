@@ -4,4 +4,4 @@ import { newTitle, newDescription, newDueDate, newPriority, newNotes, activeList
 import {viewHome } from './home.js'
 
 viewHome(activeList)
-addToListBtn.addEventListener("click", createItem)
+
