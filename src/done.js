@@ -27,12 +27,13 @@ export function viewArchive(list) {
 
         delBtn.addEventListener("click", () => {
             archivedlist.removeChild(itemElement)
-
-            if (!archive.includes(this)) return;
-            const indexx = archive.indexOf(this);
-            if (indexx > -1) {
-                archive.splice(indexx, 1);
+            const index = list.indexOf(item)
+            if(index > -1) {
+                archive.splice(index, 1)
             }
+
+            console.log(archive);
+            
         })
 
         showBtn.addEventListener("click", () => {

@@ -34,7 +34,7 @@ export let archive = [
 
 ];
 
-//DOM items
+//DOM Elements
 //item input elements
 export let newTitle = document.querySelector("#title");
 export let newDescription = document.querySelector("#description");
