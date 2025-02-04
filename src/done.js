@@ -1,20 +1,19 @@
-import { viewed, archivedlist, archive, archiveBtn } from './data.js'
-import { createElement } from './input.js';
+import { viewed, archivedlist, archive, archiveBtn } from "./data.js";
+import { createElement } from "./input.js";
 
 export function viewArchive(list) {
-    viewed.innerHTML = ""
-    archivedlist.innerHTML = ""
+  viewed.innerHTML = "";
+  archivedlist.innerHTML = "";
 
-    list.forEach((item) => {
+  list.forEach((item) => {
+    let itemElement = createElement(item, list, archivedlist);
 
-        let itemElement = createElement(item, list, archivedlist)
+    archivedlist.appendChild(itemElement);
+  });
 
-        archivedlist.appendChild(itemElement)
-    });
-
-    viewed.appendChild(archivedlist)
+  viewed.appendChild(archivedlist);
 }
 
 archiveBtn.addEventListener("click", () => {
-    viewArchive(archive)
-})
+  viewArchive(archive);
+});
