@@ -9,24 +9,20 @@ export class Item {
     }
 
     addToList() {
-        activeList.push(this);
-    }
-
-    delFromList() {
-        if (!activeList.includes(this)) return;
-        const index = activeList.indexOf(this);
-        if (index > -1) {
-            activeList.splice(index, 1);
-        }
+        active.push(this);
     }
 
     checkDone() {
-        this.delFromList();
+        if (!active.includes(this)) return;
+        const index = active.indexOf(this);
+        if (index > -1) {
+            active.splice(index, 1);
+        }
         archive.push(this)
     }
 };
 
-export let activeList = [
+export let active = [
    
 ];
 
@@ -34,7 +30,7 @@ export let archive = [
 
 ];
 
-//DOM Elements
+//DOM Eleme
 //item input elements
 export let newTitle = document.querySelector("#title");
 export let newDescription = document.querySelector("#description");

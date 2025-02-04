@@ -21,3 +21,9 @@
 body {
     background-color: antiquewhite;
 }
+
+input-couple {
+    display: flex;
+    flex-direction: row;
+    
+}
