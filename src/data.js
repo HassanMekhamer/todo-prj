@@ -22,31 +22,22 @@ export class Item {
     }
 };
 
-export let active = [
-   
-];
+export let active = [];
+export let archive = [];
 
-export let archive = [
-
-];
-
-//DOM Eleme
+//DOM Elements
 //item input elements
 export let newTitle = document.querySelector("#title");
 export let newDescription = document.querySelector("#description");
 export let newDueDate = document.querySelector("#dueDate");
 export let newPriority = document.querySelector("#priority");
 export let newNotes = document.querySelector("#notes")
-
 //tabs
 export let archiveBtn = document.querySelector(".archiveBtn");
 export let homeBtn = document.querySelector(".homeBtn");
-
 //buttons
 export let viewed = document.querySelector(".viewed")
 export let addToListBtn = document.querySelector(".addToListBtn");
-
-//creating home-list element (home-tab) active items
+//creating nodeLists
 export let homeList = document.createElement("div")
-//creating archived-list element (archived tab) archived items
 export let archivedlist = document.createElement("div")

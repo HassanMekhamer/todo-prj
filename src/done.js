@@ -1,8 +1,5 @@
-import { archivedlist, viewed, archive, archiveBtn } from './data.js'
+import { viewed, archivedlist, archive, archiveBtn } from './data.js'
 import { createElement } from './input.js';
-
-
-
 
 export function viewArchive(list) {
     viewed.innerHTML = ""
@@ -10,15 +7,13 @@ export function viewArchive(list) {
 
     list.forEach((item) => {
 
-        let itemE = createElement(item, list, archivedlist)
+        let itemElement = createElement(item, list, archivedlist)
 
-        archivedlist.appendChild(itemE)
+        archivedlist.appendChild(itemElement)
     });
 
     viewed.appendChild(archivedlist)
 }
-
-
 
 archiveBtn.addEventListener("click", () => {
     viewArchive(archive)

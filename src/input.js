@@ -24,10 +24,9 @@ export function createItem() {
 //function to create the html element in DOM from new item
 //obj is item, list is array, nodelist is htmlList
 export function createElement(obj, list, nodeList) {
-
+    
     let itemElement = document.createElement("div");
     let head = document.createElement("h4");
-    //delete buttons
     let delBtn = document.createElement("button")
     let showBtn = document.createElement("button");
 
@@ -56,7 +55,6 @@ export function createElement(obj, list, nodeList) {
         obj.show = !obj.show;
 
         if (obj.show) {
-            console.log("toggle works");
             let para = document.createElement("p");
             para.classList.add("desc")
             para.textContent = obj.description

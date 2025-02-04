@@ -1,7 +1,6 @@
 import { viewed, homeList, active, homeBtn } from './data'
 import { createElement } from './input';
 
-//function to work on the activeList array and view it in HTML
 export function viewHome(list) {
     viewed.innerHTML = ""
     homeList.innerHTML = ""
@@ -19,12 +18,10 @@ export function viewHome(list) {
             item.checkDone()
         })
 
-       
-
         homeList.appendChild(itemElement)
     });
-    viewed.appendChild(homeList)
 
+    viewed.appendChild(homeList)
 };
 
 
